@@ -145,7 +145,7 @@ let make_diagnostic doc range oloc message severity code =
     match code with
     | None -> None, None
     | Some (x,z) -> Some x, Some z in
-  Diagnostic.create ?code ?data ~range ~message ~severity ()
+  Diagnostic.create ?code ?data ~range ~message:(`String message) ~severity ()
 
 let mk_diag st (id,(lvl,oloc,qf,msg)) =
   let code = 
